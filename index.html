@@ -1,0 +1,344 @@
+<!doctype html>
+<!--
+  HOW TO EDIT THIS PAGE
+  - Every spot for your writing is marked  EDIT  in a comment and shows [brackets] on the page.
+  - Colors and fonts live in the :root block at the top of <style>. Change them there once.
+  - Photos: put image files in the /images folder and replace the placeholder <div class="ph"> with
+      <img src="images/yourphoto.jpg" alt="Name">
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biosecurity Fellowship · Harvard OpenBio</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#17583A;      /* main accent (OpenBio, darkened) */
+    --green-dark:#0F3D24;
+    --lime:#A6E34A;
+    --ob-blue:#2F6FD8;       /* OpenBio lime, used sparingly */
+    --sky:#DCEFFB;        /* OpenBio sky blue, very light */
+    --ink:#1A1F1C;
+    --muted:#626B65;
+    --line:#D9DED9;
+    --bg:#FCFCFA;
+    --serif:"Newsreader", Georgia, serif;
+    --sans:"Public Sans", Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.6}
+  a{color:var(--green);text-underline-offset:3px;text-decoration-thickness:1px}
+  a:hover{text-decoration-color:var(--lime);text-decoration-thickness:2px}
+  img{display:block;max-width:100%}
+  .container{max-width:1040px;margin:0 auto;padding:0 28px}
+  .fill{color:var(--muted);font-style:italic}   /* placeholder text style; delete class when you write */
+
+  /* header */
+  header{border-bottom:1px solid var(--line)}
+  .top{display:flex;justify-content:space-between;align-items:center;padding-top:22px;padding-bottom:22px}
+  .id{display:flex;align-items:center;gap:14px;color:var(--ink);text-decoration:none}
+  .id img{width:46px;height:46px}
+  .id .name{font-size:22px;font-weight:500;line-height:1.15}
+  .id .parent{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);font-weight:400}
+  nav a{font-family:var(--sans);font-size:15px;color:var(--ink);text-decoration:none;margin-left:26px}
+  nav a:hover{color:var(--green)}
+
+  /* intro */
+  .hero{background:var(--green-dark);color:#fff;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--ob-blue) 0%,#7CC6F2 45%,var(--lime) 100%)}
+  .intro{padding-top:96px;padding-bottom:88px}
+  .kicker{font-family:var(--sans);font-size:14px;letter-spacing:.04em;color:var(--lime)}
+  .intro h1{font-weight:400;font-size:clamp(44px,7vw,84px);line-height:1.02;margin-top:14px;letter-spacing:-.01em}
+  .intro p{margin-top:28px;max-width:30em;font-size:22px;line-height:1.5;color:#D6E4DA}
+  .facts{display:flex;flex-wrap:wrap;gap:0;margin-top:48px;border-top:1px solid rgba(255,255,255,.2);
+    font-family:var(--sans);font-size:14px;color:#BFD3C6;list-style:none}
+  .facts li{padding:16px 28px 0 0;margin-right:28px;border-right:1px solid rgba(255,255,255,.2)}
+  .facts li:last-child{border-right:0}
+  .facts b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;color:#fff}
+  .banner{margin-top:56px;aspect-ratio:21/8}
+  .ph{background:var(--sky);display:flex;align-items:center;justify-content:center;
+      font-family:var(--sans);font-size:13px;color:#6E8597;width:100%;height:100%}
+
+  /* sections */
+  section{padding:64px 0}
+  .row{display:grid;grid-template-columns:220px 1fr;gap:48px;border-top:2px solid var(--green);padding-top:22px}
+  h2{font-weight:500;font-size:28px;line-height:1.2}
+  .body p+p,.body p+ul{margin-top:1em}
+  .body ul{padding-left:1.2em}
+  .body li{margin-bottom:.5em}
+  .body li::marker{color:var(--green)}
+  .body{max-width:40em}
+
+  /* speakers */
+  .term{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--green);margin:0 0 4px}
+  .term + .speakers{margin-bottom:40px}
+  .term + .people{margin-top:16px}
+  .speakers{list-style:none}
+  .speakers li{display:grid;grid-template-columns:240px 1fr;gap:24px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+  .speakers .who{font-weight:500}
+  .speakers .aff{color:var(--muted);font-size:16px;line-height:1.5}
+
+  /* report */
+  .report-title{font-size:26px;font-weight:500;line-height:1.25;max-width:24em}
+  .report-meta{font-family:var(--sans);font-size:14px;color:var(--muted);margin:10px 0 22px}
+  .report-summary{max-width:40em;margin-bottom:28px}
+  .stats{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:28px}
+  .stats li{padding:18px 16px 18px 0;font-family:var(--sans);font-size:13px;line-height:1.4;color:var(--muted)}
+  .stats li+li{padding-left:16px;border-left:1px solid var(--line)}
+  .stats b{display:block;font-family:var(--serif);font-weight:400;font-size:40px;line-height:1.1;color:var(--green);margin-bottom:4px}
+  blockquote{font-style:italic;font-size:22px;line-height:1.4;border-left:3px solid var(--lime);padding-left:18px;margin:0 0 30px;max-width:30em}
+  @media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats li:nth-child(3){padding-left:0;border-left:0}}
+  .report-links{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+  .report-links a{font-family:var(--sans);font-size:14px;font-weight:500;text-decoration:none;padding:10px 16px;border-radius:4px;border:1px solid var(--green);color:var(--green)}
+  .report-links a.primary{background:var(--green);color:#fff}
+  .report-links a:hover{background:var(--green-dark);border-color:var(--green-dark);color:#fff}
+  .doc-frame{border:1px solid var(--line);background:#fff;box-shadow:0 1px 0 var(--line),0 18px 40px -24px rgba(15,61,36,.35)}
+  .doc-frame iframe{display:block;width:100%;height:680px;border:0}
+  @media (max-width:760px){.doc-frame iframe{height:520px}}
+
+  /* team */
+  .row-full{grid-template-columns:1fr;gap:28px}
+  .people{display:grid;grid-template-columns:repeat(4,1fr);gap:44px 28px}
+  @media (max-width:980px){.people{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:480px){.people{grid-template-columns:1fr}}
+  .person .pic{aspect-ratio:1/1;margin-bottom:14px}
+  .person .pic img{width:100%;height:100%;object-fit:cover}
+  .person h3{font-size:20px;font-weight:500;line-height:1.25}
+  .person .role{font-family:var(--sans);font-size:13px;color:var(--green);margin:3px 0 8px}
+  .person p{font-size:16px;color:var(--muted);line-height:1.5}
+  .person p.clamp{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+  .more{background:none;border:0;padding:0;margin-top:6px;font-family:var(--sans);font-size:13px;color:var(--green);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+
+  /* join */
+  .join{background:var(--green-dark);color:#E9F1EB;padding:72px 0;margin-top:32px}
+  .join .row{border-top-color:var(--lime)}
+  .join h2{color:#fff}
+  .join a{color:#fff;text-decoration-color:var(--lime)}
+  .join .fill{color:#A9BFB1}
+
+  footer{padding:30px 0;font-family:var(--sans);font-size:13px;color:var(--muted)}
+  footer .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:var(--muted);margin-left:18px}
+
+  @media (max-width:760px){
+    body{font-size:18px}
+    nav{display:none}
+    .row{grid-template-columns:1fr;gap:18px}
+    .intro{padding-top:64px;padding-bottom:56px}
+    .facts li{border-right:0;margin-right:0;padding-right:24px}
+    .banner{aspect-ratio:4/3}
+    .speakers li{grid-template-columns:1fr;gap:2px}
+    footer a{margin:0 18px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container top">
+    <a class="id" href="#">
+      <img src="logo.png" alt="OpenBio logo">
+      <span class="name">OpenBio Biosecurity</span>
+    </a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#report">Report</a>
+      <a href="#speakers">Speakers</a>
+      <a href="#team">Team</a>
+      <a href="#join">Join</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+  <div class="container intro">
+    <!-- EDIT: headline area -->
+    <div class="kicker">Harvard Undergraduate OpenBio Laboratory</div>
+    <h1>Biosecurity Fellowship</h1>
+  </div>
+  </div>
+
+  <section id="about">
+    <div class="container"><div class="row">
+      <h2>About</h2>
+      <div class="body">
+        <!-- EDIT: as many paragraphs as you like -->
+        <p>Biosecurity is the work of anticipating and preventing biological threats, from natural pandemics and laboratory accidents to the deliberate misuse of biotechnology and AI. Despite the field's growing importance, there has been no formal pathway for Harvard undergraduates to engage with it. The Harvard Undergraduate OpenBio Biosecurity Fellowship was created to fill that gap.</p>
+        <p>Each semester, a cohort of undergraduates from across concentrations meets weekly to study pandemic preparedness, synthetic biology, disease surveillance, dual-use research, and the intersection of AI and biology. Sessions pair assigned readings and student-led chalk talks with discussions led by practitioners from government, research institutes, academia, and industry, including RAND, the Broad Institute, the MIT Media Lab, and Ginkgo Bioworks.</p>
+        <p>Beyond the seminar, fellows produce original work. The fellowship's first policy report, a study of biosecurity in Harvard's undergraduate curriculum, is below.</p>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="report">
+    <div class="container"><div class="row">
+      <h2>Report</h2>
+      <div>
+        <!-- Live Google Doc: edits to the doc show here automatically -->
+        <h3 class="report-title">Biosecurity in Harvard's Undergraduate Education: Curriculum, Awareness, and Pathways</h3>
+        <p class="report-meta">Ambika Grover, Audrey Creighton, Ronni Flemming, Hafeezat Ghaffar, Sadiq Mubarak · May 2026</p>
+        <p class="report-summary">Harvard College offers no dedicated course or training in biosecurity. This report reviews 166 active courses, surveys over 100 undergraduates, and draws on student interviews to assess how biosecurity is taught and perceived on campus. It recommends a dedicated biosecurity course, a biosecurity career pathway through the Mignone Center, explicit framing of biosecurity in adjacent courses, and expanding existing secondaries such as Global Health and Health Policy.</p>
+        <div class="report-links">
+          <a class="primary" href="https://docs.google.com/document/d/1u8bYbPPXU8__clj5K1faLiw_OfrVJrSay6inHHyvDAo/edit?usp=sharing" target="_blank" rel="noopener">Read the full report</a>
+          <a href="https://docs.google.com/document/d/1u8bYbPPXU8__clj5K1faLiw_OfrVJrSay6inHHyvDAo/export?format=pdf">Download PDF</a>
+        </div>
+        <div class="doc-frame">
+          <iframe src="https://docs.google.com/document/d/1u8bYbPPXU8__clj5K1faLiw_OfrVJrSay6inHHyvDAo/preview" title="Policy report" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="speakers">
+    <div class="container"><div class="row">
+      <h2>Speakers</h2>
+      <div>
+        <!-- EDIT: one <li> per speaker: name, then title/affiliation -->
+        <p class="term">Fall 2026</p>
+        <ul class="speakers">
+            <li><span class="who">Byron Cohen</span><span class="aff">AI &amp; Biosecurity Research Resident, RAND</span></li>
+            <li><span class="who">Vaibhav Mohanty</span><span class="aff">MD-PhD Student, Harvard–MIT HST</span></li>
+            <li><span class="who">Anna Sappington</span><span class="aff">MD-PhD Student, Harvard–MIT HST</span></li>
+            <li><span class="who">Al Ozonoff</span><span class="aff">Associate Professor of Pediatrics, Harvard Medical School; Director of Pandemic Preparedness, Broad Institute; Managing Director, Sentinel</span></li>
+            <li><span class="who">Katherine Budeski</span><span class="aff">PhD, Population Health Sciences, Harvard</span></li>
+        </ul>
+        <p class="term">Fall 2025</p>
+        <ul class="speakers">
+            <li><span class="who">Kevin Esvelt</span><span class="aff">Professor, MIT Media Lab; Director, Sculpting Evolution Group</span></li>
+            <li><span class="who">Matt McKnight</span><span class="aff">Leads Biosecurity, Ginkgo Bioworks; Fellow, Defense, Emerging Technology, and Strategy Program</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="team">
+    <div class="container"><div class="row row-full">
+      <h2>Team</h2>
+      <div>
+        <!-- EDIT: copy a .person block for each person. Photos live in /images -->
+        <p class="term">Organizers</p>
+        <div class="people">
+        <div class="person">
+          <div class="pic"><img src="images/ambika-grover.jpg" alt="Ambika Grover"></div>
+          <h3>Ambika Grover</h3>
+          <div class="role">Founder &amp; Director · OpenBio Co-Director</div>
+          <p>Ambika is a senior in Leverett House and the founder and director of the Harvard Undergraduate OpenBio Biosecurity Fellowship. Motivated by the imperative of biosecurity and the lack of a formal pathway for Harvard undergraduates to engage with the field, she created the fellowship as an avenue to help students explore and engage in biosecurity research and policy. She is thrilled to lead the second iteration of the fellowship!</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/hafeezat-ghaffar.jpg" alt="Hafeezat Ghaffar"></div>
+          <h3>Hafeezat Ghaffar</h3>
+          <div class="role">Engagement Director</div>
+          <p>Hafeezat is a sophomore in Mather, concentrating in Neuroscience and Statistics. She is passionate about neurodegenerative disease and conducts research with the Albers Lab at Mass General Brigham. She is also involved with the Harvard Undergraduate Black Health Advocates and Harvard Muslim Youth Program as a mentor and treasurer.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/audrey-creighton.jpg" alt="Audrey Creighton"></div>
+          <h3>Audrey Creighton</h3>
+          <div class="role">Social Director</div>
+          <p>Audrey Creighton is a junior at Harvard University majoring in bioengineering, serving as Social Director for the Fall 2026 iteration of the fellowship. Audrey is from Lexington, Massachusetts, and is passionate about biosecurity, computational biology, and biotechnology. In addition to her role with the OpenBio Biosecurity program, she takes part in Army ROTC, and conducts computational biology research in infectious diseases.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/sadiq.jpg" alt="Sadiq Mubarak"></div>
+          <h3>Sadiq Mubarak</h3>
+          <div class="role">Curriculum Director</div>
+          <p>Sadiq is a current sophomore at Harvard College planning to concentrate in Neuroscience with a Joint in Mathematics and a secondary in Global Health and Health Policy, serving as Curriculum Director this semester. He is especially interested in how quantitative tools can illuminate the brain biology and inform solutions toward global health challenges. Outside the classroom, he enjoys exploring ideas at the intersection of science, policy, and human impact.</p>
+        </div>
+        </div>
+        <p class="term" style="margin-top:56px">Fall 2026 Fellows</p>
+        <div class="people">
+        <div class="person">
+          <div class="pic"><img src="images/hiral-chavre.jpg" alt="Hiral Chavre"></div>
+          <h3>Hiral Chavre</h3>
+          <p>Hiral is a senior in Pforzheimer House from Long Island, New York. She is studying Neuroscience with a secondary in English at Harvard and is invested in the intersection of STEM and policy. Outside of academics, Hiral works in Harvard Model Congress, serves as Peer Advising Fellow, and conducts research with the Phelps Lab. Hiral is excited to learn more about biosecurity through OpenBio&#x27;s fellowship!</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/toby-chen.jpg" alt="Toby Chen"></div>
+          <h3>Toby Chen</h3>
+          <p>Toby is a second year undergraduate studying Physics and Comparative Literature. He is interested in protein engineering, synthetic biology, and biomaterials. In his free time, he enjoys golf, poetry, and geocaching.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/sophie-hsu.jpg" alt="Sophie Hsu"></div>
+          <h3>Sophie Hsu</h3>
+          <p>Sophie is a freshman from Taiwan interested in studying computational neuroscience and philosophy. Her interests lie at the intersection of people and technology, and her past projects include building wearable devices for people with visual impairment. Outside of academics, she loves to run, surf, foodie, and read!</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/moeka-koyama.jpg" alt="Moeka Koyama"></div>
+          <h3>Moeka Koyama</h3>
+          <p>Moeka is a Senior at Harvard College concentrating in Molecular and Cellular Biology and Linguistics. In her spare time, she enjoys reading and taking long walks.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/myla-leung.jpg" alt="Myla Leung"></div>
+          <h3>Myla Leung</h3>
+          <p>Myla Leung is a sophomore in Adams House studying Economics and Integrative Biology. She has always been fascinated by the biological sciences, with research experience spanning synthetic biology focused on HSV-1 targeting colorectal cancer and parasitic disease research on schistosomiasis. She is also deeply interested in global health and finding ways to improve health outcomes at scale. She is especially excited to join the OpenBio Biosecurity Fellowship this year and explore the intersection of biology, health, and biosecurity, as well as how these fields intersect with other critical issues such as climate change and global health.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/irene-pan.jpg" alt="Irene Pan"></div>
+          <h3>Irene Pan</h3>
+          <p>Irene is a first-year at Harvard interested in concentrating in Computer Science and Neuroscience. She is passionate about using technology to improve healthcare and is interested in learning more about the intersection between science and society. In her free time, Irene loves to sing, draw, and when she has the chance - go backpacking in the outdoors!</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/xitiz-shakya.jpg" alt="Xitiz Shakya"></div>
+          <h3>Xitiz Shakya</h3>
+          <p>Xitiz is a current freshman from Arlington Massachusetts, planning to concentrate in electrical engineering. He is interested in learning more about the future possibilities of AI and how it can help advance science and engineering, but also the consequences of AI&#x27;s advancement. Outside of academics and clubs, he loves watching football.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/salma-siddiqui.jpg" alt="Salma Siddiqui"></div>
+          <h3>Salma Siddiqui</h3>
+          <p>Salma is a junior double concentrating in Social Studies and Integrative Biology. She is passionate about the intersection of biotech, policy, and society. Her lab work includes developing an AI model to interpret spatial genomics data for early brain tumor detection.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/suhani-singh.jpg" alt="Suhani Singh"></div>
+          <h3>Suhani Singh</h3>
+          <p>Suhani is a first-year at Harvard studying Neuroscience with a secondary in Global Health &amp; Health Policy. Her previous work includes neuroimaging research on substance exposure and the adolescent brain, wet-lab protein biology and biochemistry research, and health policy advocacy around flavored tobacco restrictions in Washington state. Currently, she is especially interested in regenerative neurobiology, women&#x27;s health, the glymphatic system, and neurotechnology/NeuroAI, alongside the biosecurity and bioethics questions emerging from advances in neuroscience and biotechnology. Outside of academics, she finds fulfillment in reading novels, writing, investigative journalism, crisis support, weightlifting, and spending quality time with loved ones.</p>
+        </div>
+        <div class="person">
+          <div class="pic"><img src="images/feng-xue.jpg" alt="Feng Xue"></div>
+          <h3>Feng Xue</h3>
+          <p>Feng Xue is a freshman at Harvard who enjoys playing ping pong, swimming, and running. He is also taking part in NROTC and plans to commission in the Navy after medical school, if he gets in. He is also extremely interested in biology and how artificial intelligence will affect outcomes of biological research in the near future.</p>
+        </div>
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="join" class="join">
+    <div class="container"><div class="row">
+      <h2>Join</h2>
+      <div class="body">
+        <!-- EDIT: how to apply / get in touch; swap # for your form link -->
+        <p>The fellowship meets weekly during the semester, and no prior biosecurity experience is required. It is open to all Harvard College students, and applications for future cohorts will be announced here.</p>
+        <p>Questions? Contact ambikagrover [at] college.harvard.edu.</p>
+      </div>
+    </div></div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>Harvard Undergraduate OpenBio Laboratory</span>
+    <span><a href="https://www.openbiolab.org/">openbiolab.org</a></span>
+  </div>
+</footer>
+
+<script>
+  // Shortens long bios to 6 lines with a "Read more" link
+  document.querySelectorAll('.person p:not(.fill)').forEach(function(p){
+    p.classList.add('clamp');
+    if (p.scrollHeight <= p.clientHeight + 2) { p.classList.remove('clamp'); return; }
+    var b = document.createElement('button');
+    b.className = 'more'; b.textContent = 'Read more';
+    b.onclick = function(){
+      var open = p.classList.toggle('clamp');
+      b.textContent = open ? 'Read more' : 'Show less';
+    };
+    p.after(b);
+  });
+</script>
+
+</body>
+</html>
